@@ -2,5 +2,5 @@ class Question < ApplicationRecord
   belongs_to :test
   has_many :answers
   validates :answers, length: { minimum: 1, maximum: 4 }
-  validates :title, presence: true
+  validates :body, presence: true
 end
