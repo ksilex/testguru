@@ -4,9 +4,17 @@ class Test < ApplicationRecord
   has_many :questions
   has_many :user_tests
   has_many :users, through: :user_tests
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def self.category_sort(category)
-    Test.joins(:category).where("categories.title = ?", category).
-    order(title: :desc).pluck(:title)
+  scope :by_category, ->(category) {
+    joins(:category).where("categories.title = ?", category)
+  }
+  scope :easy_lvls,   -> { where(level: 0..1) }
+  scope :medium_lvls, -> { where(level: 2..4) }
+  scope :hard_lvls,   -> { where(level: 5..Float::INFINITY) }
+
+  def self.titles_by_category(category)
+    by_category(category).order(title: :desc).pluck(:title)
   end
 end
