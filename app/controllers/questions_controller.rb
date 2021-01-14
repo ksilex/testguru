@@ -11,21 +11,24 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
+    @question.answers.build
   end
 
   def create
     @test.questions.create(question_params)
+    redirect_to test_questions_path
   end
 
   def destroy
-    Question.find(params[:id]).delete
+    Question.find(params[:id]).destroy
+    render plain: "Question deleted"
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:body, answers_attributes: [:body])
   end
 
   def associated_test
