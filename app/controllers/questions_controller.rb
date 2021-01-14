@@ -11,11 +11,11 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = @test.questions.new
+    @question = Question.new
   end
 
   def create
-    Question.create(question_params)
+    @test.questions.create(question_params)
   end
 
   def destroy
@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def associated_test
