@@ -1,0 +1,4 @@
+<%= form_with model: @question, url: "/tests/#{@test.id}/questions" do |form| %>
+<%= form.text_area :body %>
+<%= form.submit %>
+<%end%>
