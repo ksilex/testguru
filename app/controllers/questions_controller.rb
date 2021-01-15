@@ -12,12 +12,15 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @test.questions.new
-    @question.answers.build
   end
 
   def create
-    @test.questions.create(question_params)
-    redirect_to test_questions_path
+    @question = @test.questions.new(question_params)
+    if @question.save
+      redirect_to test_questions_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -28,7 +31,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, answers_attributes: [:body])
+    params.require(:question).permit(:body)
   end
 
   def associated_test
