@@ -1,0 +1,9 @@
+<h1>Вопросы <%=@test.title%></h1>
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th colspan="2">Действия</th>
+  </tr>
+  <%= render @questions %>
+</table>
+<%= link_to "Назад", tests_path %>
