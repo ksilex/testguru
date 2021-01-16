@@ -1,7 +1,7 @@
 <tr>
   <td><%=question.body%></td>
-  <td><%=link_to 'Изменить', edit_test_question_path(question.test, question)%></td>
-  <td><%=link_to 'Удалить', test_question_path(question.test, question), 
+  <td><%=link_to 'Изменить', edit_question_path(question)%></td>
+  <td><%=link_to 'Удалить', question, 
                             method: :delete,
                             data: { confirm: "Вы уверены?" } %>
   </td>

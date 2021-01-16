@@ -1,5 +1,5 @@
 <%= render "shared/errors", resource: @question %>
-<%= form_with model: [@test, @question], local: true do |form| %>
+<%= form_with model: resource, local: true do |form| %>
   Введите текст вопроса<br>
   <%= form.text_area :body %><br>
   <%= form.submit %>
