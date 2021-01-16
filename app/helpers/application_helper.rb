@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def github_url(user, project)
-    "https://github.com/#{user}/#{project}"
+    link_to "Код проекта", "https://github.com/#{user}/#{project}", target: "_blank"
   end
 end

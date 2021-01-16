@@ -1,6 +1,6 @@
 module QuestionsHelper
-  def question_header
-    if params[:id]
+  def question_header(question)
+    if question.persisted?
       action = "Изменение"
     else
       action = "Создание"
