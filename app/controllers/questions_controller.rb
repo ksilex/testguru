@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
-  before_action :associated_test, only: %i[create new edit update]
+  before_action :associated_test, only: %i[create new]
   before_action :find_question, only: %i[destroy edit update]
 
   def new

@@ -5,6 +5,6 @@ module QuestionsHelper
     else
       action = "Создание"
     end
-    "#{action} вопроса для теста #{@test.title}"
+    "#{action} вопроса для теста #{question.test.title}"
   end
 end
