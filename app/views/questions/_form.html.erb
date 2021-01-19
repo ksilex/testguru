@@ -1,0 +1,7 @@
+<%= render "shared/errors", resource: @question %>
+<%= form_with model: resource, local: true do |form| %>
+  Введите текст вопроса<br>
+  <%= form.text_area :body %><br>
+  <%= form.submit %>
+<%end%>
+<%= link_to "Назад", test_path(@question.test)%>

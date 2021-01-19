@@ -1,7 +1,3 @@
-<h1>Создание вопроса для теста <%=@test.title%></h1>
-<%= render partial: "question_errors", object: @question %>
-<%= form_with model: @question, url: "/tests/#{@test.id}/questions" do |form| %>
-  Введите текст вопроса<br>
-  <%= form.text_area :body %><br>
-  <%= form.submit %>
-<%end%>
+<h1><%=question_header(@question)%></h1>
+<%= render "form", resource: [@question.test, @question]%>
+
