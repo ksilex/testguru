@@ -1,0 +1,12 @@
+<h1>Прохождение теста <%= @test_passage.test.title %></h1>
+<b>Вопрос №<%= @test_passage.question_number %> |</b>
+<b>Всего:<%= @test_passage.total_questions %></b>
+<h2><%= "Вопрос: #{@test_passage.current_question.body}" %></h2>
+<%=form_with url: @test_passage, method: :put, local: true do |form| %>
+  <%= form.collection_check_boxes :answer_ids,
+  @test_passage.current_question.answers, :id, :body, include_hidden: false do |answer| %>
+    <%=answer.check_box%>
+    <%=answer.label%><br>
+  <% end %>
+  <%= form.submit "Next" %>
+<% end %>
