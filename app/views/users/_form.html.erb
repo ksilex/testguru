@@ -1,0 +1,13 @@
+<%= render "shared/errors", resource: @user %>
+<%= form_with model: @user, local: true do |form| %>
+  Введите текст вопроса<br>
+  <%= form.label :email %><br>
+  <%= form.text_field :email %><br>
+  <%= form.label :username %><br>
+  <%= form.text_field :username %><br>
+  <%= form.label :password %><br>
+  <%= form.password_field :password %><br>
+  <%= form.label :password_confirmation %><br>
+  <%= form.password_field :password_confirmation %><br>
+  <%= form.submit %>
+<%end%>
