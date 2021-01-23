@@ -1,6 +1,5 @@
 <%= render "shared/errors", resource: @user %>
 <%= form_with model: @user, local: true do |form| %>
-  Введите текст вопроса<br>
   <%= form.label :email %><br>
   <%= form.text_field :email %><br>
   <%= form.label :username %><br>

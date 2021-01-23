@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       redirect_to session[:requested_url]
       session.delete(:requested_url)
     else
+      flash.now[:alert] = "Пользователь не найден"
       render :new
     end
   end

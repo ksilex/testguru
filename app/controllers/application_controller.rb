@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      redirect_to sign_in_path
+      redirect_to sign_in_path, alert: "Войдите в учетную запись"
     end
   end
 
