@@ -1,0 +1,8 @@
+<%= flash_message %>
+<%= form_with url: sessions_path, local: true do |form| %>
+  <%= form.label :email %><br>
+  <%= form.text_field :email %><br>
+  <%= form.label :password %><br>
+  <%= form.password_field :password %><br>
+  <%= form.submit %>
+<%end%>

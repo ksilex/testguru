@@ -60,3 +60,10 @@ blockquote::before, blockquote::after, q::before, q::after {
     content: '';
     content: none;
 }
+
+.alert {
+  padding: 20px;
+  background-color: #e97870;
+  color: white;
+  margin-bottom: 15px;
+}

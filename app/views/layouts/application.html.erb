@@ -11,6 +11,13 @@
 
   <body>
     <%= link_to "Все тесты", tests_path %>
+    <% if current_user %>
+      <%= link_to "Выход", sign_out_path, method: :delete %>
+      <div style="float: right">Вы вошли как <%=current_user.username%></div>
+    <% else %>
+      <%= link_to "Логин", sign_in_path %>
+      <%= link_to "Регистрация", sign_up_path %>
+    <% end %>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
