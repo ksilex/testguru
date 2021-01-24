@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :sessions, only: :create
   resources :tests do
     member do
-      post :start
+      get :start
     end
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: %i[index show]

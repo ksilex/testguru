@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :requested_url
+  before_action :requested_url, unless: :current_user
   helper_method :current_user
 
   private

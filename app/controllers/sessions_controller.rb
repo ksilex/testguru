@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to session[:requested_url]
+      redirect_to session[:requested_url] || root_url
       session.delete(:requested_url)
     else
       flash.now[:alert] = "Пользователь не найден"
