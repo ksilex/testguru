@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   root "tests#index"
-  get :sign_in, to: "sessions#new"
-  get :sign_up, to: "users#new"
-  delete :sign_out, to: "sessions#destroy"
-  resources :users, only: :create
-  resources :sessions, only: :create
-  resources :tests do
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
+  resources :tests, only: %i[index show start] do
     member do
       get :start
     end
@@ -17,6 +15,10 @@ Rails.application.routes.draw do
     member do
       get :result
     end
+  end
+
+  namespace :admin do
+    resources :tests
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
