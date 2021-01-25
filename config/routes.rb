@@ -7,9 +7,6 @@ Rails.application.routes.draw do
     member do
       get :start
     end
-    resources :questions, shallow: true, except: :index do
-      resources :answers, shallow: true, except: %i[index show]
-    end
   end
   resources :test_passages, only: %i[show update] do
     member do
@@ -18,7 +15,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :tests
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: %i[index show]
+      end
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

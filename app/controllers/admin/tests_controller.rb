@@ -1,16 +1,10 @@
-class Admin::TestsController < ApplicationController
-  before_action :authenticate_user!, only: :start
+class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show result start edit update]
   def index
     @tests = Test.all
   end
 
   def show
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   def new
@@ -30,6 +24,11 @@ class Admin::TestsController < ApplicationController
   end
 
   def update
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :edit
+    end
   end
 
   private
