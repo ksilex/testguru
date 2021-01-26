@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testguru</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="nav admin">
+      TestGuru Страница Админа |
+      <%= link_to "Все тесты", admin_tests_path %>
+      <%= link_to "Выход", destroy_user_session_path, method: :delete %>
+      <div style="float: right">Добро пожаловать, <%=current_user.username%>!</div>
+    </div>
+    <%= render "shared/flash" %>
+    <%= yield %>
+    <%= render "shared/footer" %>
+  </body>
+</html>
