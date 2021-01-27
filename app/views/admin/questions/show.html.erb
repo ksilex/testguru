@@ -1,13 +1,13 @@
 <h1>Ответы к вопросу <%=@question.body%></h1>
 <% if show_link(@question) %>
-<%= link_to "Добавить ответ", new_admin_question_answer_path(@question)%>
+<%= link_to t(".add"), new_admin_question_answer_path(@question)%>
 <% end %>
 <table>
   <tr>
-    <th>Ответ</th>
-    <th>Корректный</th>
-    <th colspan="2">Действия</th>
+    <th><%= t(Answer.model_name.human)%></th>
+    <th><%= t(Answer.human_attribute_name('correct'))%></th>
+    <th colspan="2"><%=t("actions")%></th>
   </tr>
   <%= render @question.answers %>
 </table>
-<%= link_to "Назад", [:admin, @question.test] %>
+<%= link_to t("back"), [:admin, @question.test] %>

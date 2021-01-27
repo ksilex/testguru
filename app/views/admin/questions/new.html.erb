@@ -1,2 +1,2 @@
-<h1><%= "#{action_for(@question)} вопроса для теста #{@question.test.title}"%></h1>
+<h1><%= t(".head", action: action_for(@question), test: @question.test.title)%></h1>
 <%= render "form" %>

@@ -1,5 +1,100 @@
 ru:
+  actions: "Действия"
+  confirm: "Вы уверены?"
+  back: "Назад"
+  edit: "Изменение"
+  create: "Создание"
+  denied: "Нет прав для доступа к этой странице"
+  edit: "Редактировать"
+  delete: "Удалить"
+  new: "Создать"
+  show: "Показать"
+  sign_out: "Выйти"
+  all_tests: "Все тесты"
+  year: "Год"
+
+  layouts:
+    admin:
+      head: "Админ панель"
+
+  shared:
+    footer:
+      tn: "Учебный проект в онлайн-школе Thinknetica"
+
+  admin:
+    tests:
+      index:
+        questquant: "Кол-во вопросов"
+      edit:
+        head: "%{action} теста"
+      new:
+        head: "%{action} теста"
+      test:
+        add: "Добавить вопрос"
+    answers:
+      edit:
+        head: "%{action} ответа для вопроса - %{question}"
+      new:
+        head: "%{action} ответа для вопроса - %{question}"
+    questions:
+      show:
+        add: "Добавить ответ"
+      edit:
+        head: "%{action} вопроса для теста - %{test}"
+      new:
+        head: "%{action} ответа для вопроса - %{test}"
+
+  test_passages:
+    show:
+      passing: "Прохождение теста"
+    result:
+      done: "завершен"
+      percent: "Процент отвеченных вопросов"
+      win: "Тест пройден"
+      lose: "Тест провален"
+  users:
+    sessions:
+      create:
+        welcome: "Добро пожаловать, %{username}!"
+
   activerecord:
+    models:
+      test: "Тест"
+      category: "Категория"
+      user: "Пользователь"
+      test_passage: "Прохождение теста"
+      answer: "Ответ"
+      question: "Вопрос"
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+        user_id: "Автор"
+      user:
+        username: "Имя пользователя"
+        email: "Почта"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
+      category:
+        title: "Название"
+      test_passage:
+        user_id: "Пользователь"
+        test_id: "Тест"
+        question_id: "Вопрос"
+        correct_answers: "Правильных ответов"
+        question_number: "Номер вопроса"
+      answer:
+        body: "Содержание"
+        question_id: "Вопрос"
+        correct: "Правильный"
+      question:
+        test_id: "Тест"
+        body: "Содержание"
+
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
@@ -16,7 +111,7 @@ ru:
     - Пт
     - Сб
     abbr_month_names:
-    - 
+    -
     - янв.
     - февр.
     - марта
@@ -42,7 +137,7 @@ ru:
       long: "%-d %B %Y"
       short: "%-d %b"
     month_names:
-    - 
+    -
     - января
     - февраля
     - марта
@@ -181,7 +276,7 @@ ru:
     submit:
       create: Создать %{model}
       submit: Сохранить %{model}
-      update: Сохранить %{model}
+      update: Обновить %{model}
   number:
     currency:
       format:

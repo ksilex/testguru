@@ -9,9 +9,9 @@ module ApplicationHelper
 
   def action_for(instance)
     if instance.persisted?
-      "Изменение"
+      t("edit")
     else
-      "Создание"
+      t("create")
     end
   end
 end

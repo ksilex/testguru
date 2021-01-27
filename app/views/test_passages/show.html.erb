@@ -1,4 +1,4 @@
-<h1>Прохождение теста <%= @test_passage.test.title %></h1>
+<h1><%=t(".passing")%> <%= @test_passage.test.title %></h1>
 <b>Вопрос №<%= @test_passage.question_number %> |</b>
 <b>Всего:<%= @test_passage.total_questions %></b>
 <h2><%= "Вопрос: #{@test_passage.current_question.body}" %></h2>

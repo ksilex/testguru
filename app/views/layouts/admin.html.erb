@@ -11,9 +11,9 @@
 
   <body>
     <div class="nav admin">
-      TestGuru Страница Админа |
-      <%= link_to "Все тесты", admin_tests_path %>
-      <%= link_to "Выход", destroy_user_session_path, method: :delete %>
+      TestGuru | <%=t(".head")%> |
+      <%= link_to t("all_tests"), admin_tests_path %>
+      <%= link_to t("sign_out"), destroy_user_session_path, method: :delete %>
       <div style="float: right">Добро пожаловать, <%=current_user.username%>!</div>
     </div>
     <%= render "shared/flash" %>

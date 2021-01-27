@@ -1,3 +1,2 @@
-<h1><%= "#{action_for(@answer)} ответа для вопроса:"%></h1>
-<h2><%=@answer.question.body%></h2>
+<h1><%= t(".head", action: action_for(@answer), question: @answer.question.body)%></h1>
 <%= render 'form' %>
