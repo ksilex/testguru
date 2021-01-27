@@ -1,6 +1,6 @@
 <h1>Ответы к вопросу <%=@question.body%></h1>
 <% if show_link(@question) %>
-<%= link_to "Добавить ответ", new_question_answer_path(@question)%>
+<%= link_to "Добавить ответ", new_admin_question_answer_path(@question)%>
 <% end %>
 <table>
   <tr>
@@ -10,4 +10,4 @@
   </tr>
   <%= render @question.answers %>
 </table>
-<%= link_to "Назад", @question.test %>
+<%= link_to "Назад", [:admin, @question.test] %>

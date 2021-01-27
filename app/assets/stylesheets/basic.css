@@ -67,3 +67,9 @@ blockquote::before, blockquote::after, q::before, q::after {
   color: white;
   margin-bottom: 15px;
 }
+.notice {
+  padding: 20px;
+  background-color: #47a7f0;
+  color: white;
+  margin-bottom: 15px;
+}

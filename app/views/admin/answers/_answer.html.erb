@@ -1,8 +1,8 @@
 <tr>
   <td><%=answer.body%></td>
   <td><%=answer.correct_output%></td>
-  <td><%=link_to 'Изменить', edit_answer_path(answer)%> |</td>
-  <td><%=link_to 'Удалить', answer,
+  <td><%=link_to 'Изменить', edit_admin_answer_path(answer)%> |</td>
+  <td><%=link_to 'Удалить', [:admin, answer],
                             method: :delete,
                             data: { confirm: "Вы уверены?" } %>
   </td>

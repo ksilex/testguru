@@ -1,5 +1,5 @@
 <%= render "shared/errors", resource: @answer %>
-<%= form_with model: [@question, @answer], local: true do |form| %>
+<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
   <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body %>
@@ -14,4 +14,4 @@
     <%= form.submit %>
   </div>
 <% end %>
-<%= link_to 'Назад', @answer.question %>
+<%= link_to 'Назад', [:admin, @answer.question] %>

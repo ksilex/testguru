@@ -1,20 +1,19 @@
 class ApplicationController < ActionController::Base
-  before_action :requested_url
-  helper_method :current_user
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!
 
-  private
+  protected
 
-  def requested_url
-    session[:requested_url] = request.url
-  end
-
-  def authenticate_user!
-    unless current_user
-      redirect_to sign_in_path, alert: "Войдите в учетную запись"
+  def after_sign_in_path_for(resource)
+    if current_user.admin?
+      admin_tests_path
+    else
+      super
     end
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  def configure_permitted_parameters
+    attributes = [:username, :password, :email, :first_name, :last_name]
+    devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
   end
 end

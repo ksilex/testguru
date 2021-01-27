@@ -4,6 +4,6 @@
   <td><%=test.level%></td>
   <td><%=test.author.username%></td>
   <td><%=test.questions.count%></td>
-  <td><%=link_to 'Пройти', start_test_path(test)%> |</td>
-  <td><%=link_to 'Показать', test%> </td>
+  <td><%=link_to 'Показать', [:admin, test]%> |</td>
+  <td><%=link_to 'Новый вопрос', new_admin_test_question_path(test)%></td>
 </tr>
