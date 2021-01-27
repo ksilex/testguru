@@ -1,4 +1,4 @@
-<h1>Ответы к вопросу <%=@question.body%></h1>
+<h1><%=@question.body%></h1>
 <% if show_link(@question) %>
 <%= link_to t(".add"), new_admin_question_answer_path(@question)%>
 <% end %>

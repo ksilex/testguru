@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true,
             format: { with: URI::MailTo::EMAIL_REGEXP,
-            message: "Неверный формат почты" }
+            message: I18n.t(".email_format_message") }
 
   def tests_by_lvl(level)
     tests.where(level: level)

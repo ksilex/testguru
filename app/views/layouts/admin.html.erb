@@ -14,7 +14,7 @@
       TestGuru | <%=t(".head")%> |
       <%= link_to t("all_tests"), admin_tests_path %>
       <%= link_to t("sign_out"), destroy_user_session_path, method: :delete %>
-      <div style="float: right">Добро пожаловать, <%=current_user.username%>!</div>
+      <div style="float: right"><%=t("welcome")%>, <%=current_user.username%>!</div>
     </div>
     <%= render "shared/flash" %>
     <%= yield %>

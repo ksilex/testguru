@@ -1,9 +1,9 @@
-<h1>Вопросы <%=@test.title%></h1>
+<h1><%=t("questions")%> <%=@test.title%></h1>
 <table>
   <tr>
-    <th>Вопрос</th>
-    <th>Кол-во ответов</th>
-    <th colspan="3">Действия</th>
+    <th><%=t(Question.model_name.human)%></th>
+    <th><%=t(".answers_count")%></th>
+    <th colspan="3"><%=t("actions")%></th>
   </tr>
   <%= render @test.questions %>
 </table>

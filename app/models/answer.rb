@@ -5,12 +5,12 @@ class Answer < ApplicationRecord
   validate :max_answers
 
   def correct_output
-    correct ? "Да" : "Нет"
+    correct ? I18n.t(".output_yes") : I18n.t(".output_no")
   end
 
   private
 
   def max_answers
-    errors.add(:question, "question can only have max of 4 answers") if question.answers.size > 4
+    errors.add(:question, I18n.t(".reached_max_answers")) if question.answers.size > 4
   end
 end

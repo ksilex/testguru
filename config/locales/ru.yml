@@ -2,7 +2,7 @@ ru:
   actions: "Действия"
   confirm: "Вы уверены?"
   back: "Назад"
-  edit: "Изменение"
+  edition: "Изменение"
   create: "Создание"
   denied: "Нет прав для доступа к этой странице"
   edit: "Редактировать"
@@ -12,6 +12,13 @@ ru:
   sign_out: "Выйти"
   all_tests: "Все тесты"
   year: "Год"
+  entered_as: "Вы вошли как"
+  questions: "Вопросы"
+  output_yes: "Да"
+  output_no: "Нет"
+  welcome: "Добро пожаловать"
+  reached_max_answers: "может иметь макс. 4 ответа"
+  email_format_message: "неверный формат"
 
   layouts:
     admin:
@@ -20,17 +27,21 @@ ru:
   shared:
     footer:
       tn: "Учебный проект в онлайн-школе Thinknetica"
+      project_code: "Код проекта"
 
   admin:
     tests:
       index:
         questquant: "Кол-во вопросов"
+        new_test: "Новый тест"
       edit:
         head: "%{action} теста"
       new:
         head: "%{action} теста"
       test:
         add: "Добавить вопрос"
+      show:
+        answers_count: "Кол-во ответов"
     answers:
       edit:
         head: "%{action} ответа для вопроса - %{question}"
@@ -42,10 +53,19 @@ ru:
       edit:
         head: "%{action} вопроса для теста - %{test}"
       new:
-        head: "%{action} ответа для вопроса - %{test}"
+        head: "%{action} вопроса для теста - %{test}"
+  
+  tests:
+    test:
+      pass_test: "Пройти"
+    index:
+        questquant: "Кол-во вопросов"
 
   test_passages:
     show:
+      next: "Далее"
+      question_number: "Вопрос №"
+      total_questions: "Всего"
       passing: "Прохождение теста"
     result:
       done: "завершен"
