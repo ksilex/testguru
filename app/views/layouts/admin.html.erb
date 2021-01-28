@@ -4,18 +4,14 @@
     <title>Testguru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="nav admin">
-      TestGuru | <%=t(".head")%> |
-      <%= link_to t("all_tests"), admin_tests_path %>
-      <%= link_to t("sign_out"), destroy_user_session_path, method: :delete %>
-      <div style="float: right"><%=t("welcome")%>, <%=current_user.username%>!</div>
-    </div>
+    <%= render "shared/admin_navbar" %>
     <%= render "shared/flash" %>
     <%= yield %>
     <%= render "shared/footer" %>
