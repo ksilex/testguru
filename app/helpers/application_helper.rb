@@ -4,14 +4,14 @@ module ApplicationHelper
   end
 
   def github_url(user, project)
-    link_to "Код проекта", "https://github.com/#{user}/#{project}", target: "_blank"
+    link_to t(".project_code"), "https://github.com/#{user}/#{project}", target: "_blank"
   end
 
   def action_for(instance)
     if instance.persisted?
-      "Изменение"
+      t("edition")
     else
-      "Создание"
+      t("create")
     end
   end
 end

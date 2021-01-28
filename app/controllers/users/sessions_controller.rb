@@ -6,6 +6,6 @@ class Users::SessionsController < Devise::SessionsController
   private
 
   def notify_user
-    flash[:notice] = "Добро пожаловать, #{current_user.username}!"
+    flash[:notice] = t(".welcome", username: current_user.username)
   end
 end

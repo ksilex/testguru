@@ -1,7 +1,10 @@
 <%= render "shared/errors", resource: @test %>
 <%= form_with model: [:admin, @test], local: true do |form| %>
+  <%= form.label :title %><br>
   <%= form.text_field :title %><br>
+  <%= form.label :category_id %><br>
   <%= form.collection_select :category_id, Category.all, :id, :title %><br>
+  <%= form.label :level %><br>
   <%= form.text_field :level %><br>
   <%= form.submit %>
 <%end%>

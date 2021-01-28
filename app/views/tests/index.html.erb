@@ -1,13 +1,12 @@
 <h1>TestGuru</h1>
 <table>
   <tr>
-    <th>Категория</th>
-    <th>Название</th>
-    <th>Уровень</th>
-    <th>Создан</th>
-    <th>Кол-во вопросов</th>
-    <th colspan="2">Действия</th>
-
+    <th><%=t(Test.human_attribute_name("category_id"))%></th>
+    <th><%=t(Test.human_attribute_name("title"))%></th>
+    <th><%=t(Test.human_attribute_name("level"))%></th>
+    <th><%=t(Test.human_attribute_name("user_id"))%></th>
+    <th><%=t(".questquant")%></th>
+    <th colspan="2"><%=t("actions")%></th>
   </tr>
   <%= render @tests %>
 </table>

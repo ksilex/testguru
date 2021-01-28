@@ -1,8 +1,8 @@
-<h1>Вопросы <%=@test.title%></h1>
+<h1><%=t("questions")%> <%=@test.title%></h1>
 <table>
   <tr>
-    <th>Вопрос</th>
+    <th><%=t(Question.model_name.human)%></th>
   </tr>
   <%= render @test.questions %>
 </table>
-<%= link_to "Назад", tests_path %>
+<%= link_to t("back"), tests_path %>

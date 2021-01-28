@@ -10,13 +10,13 @@
   </head>
 
   <body>
-    <%= link_to "Все тесты", tests_path %>
+    <%= link_to t("all_tests"), tests_path %>
     <% if current_user %>
-      <%= link_to "Выход", destroy_user_session_path, method: :delete %>
-      <div style="float: right">Вы вошли как <%=current_user.username%></div>
+      <%= link_to t("sign_out"), destroy_user_session_path, method: :delete %>
+      <div style="float: right"><%=t("entered_as")%> <%=current_user.username%></div>
     <% else %>
-      <%= link_to "Логин", new_user_session_path %>
-      <%= link_to "Регистрация", new_user_registration_path %>
+      <%= link_to t("devise.sessions.new.head"), new_user_session_path %>
+      <%= link_to t("devise.registrations.new.head"), new_user_registration_path %>
     <% end %>
     <%= render "shared/flash" %>
     <%= yield %>
