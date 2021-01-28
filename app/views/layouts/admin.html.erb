@@ -13,7 +13,9 @@
   <body>
     <%= render "shared/admin_navbar" %>
     <%= render "shared/flash" %>
-    <%= yield %>
-    <%= render "shared/footer" %>
+    <div class="container-fluid">
+      <%= yield %>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
