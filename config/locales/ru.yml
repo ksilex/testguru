@@ -19,6 +19,8 @@ ru:
   welcome: "Добро пожаловать"
   reached_max_answers: "может иметь макс. 4 ответа"
   email_format_message: "неверный формат"
+  description: 'Вопрос теста "%{title}"'
+  answers: "Ответы"
 
   layouts:
     admin:
@@ -54,7 +56,7 @@ ru:
         head: "%{action} вопроса для теста - %{test}"
       new:
         head: "%{action} вопроса для теста - %{test}"
-  
+
   tests:
     test:
       pass_test: "Пройти"

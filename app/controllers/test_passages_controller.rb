@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, only: %i[show result update]
+  before_action :set_test_passage, only: %i[show result update gist]
   def show
   end
 
@@ -13,6 +13,14 @@ class TestPassagesController < ApplicationController
     else
     render :show
     end
+  end
+
+  def gist
+    result = GistQuestionService.new(@test_passage.current_question).call
+    message = if result.success?
+      { notice: "created gist #{result[:location][/[^\/]*$/]}" }
+    end
+    redirect_to @test_passage, message
   end
 
   private

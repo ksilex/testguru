@@ -19,6 +19,8 @@ en:
   welcome: "Welcome"
   reached_max_answers: "can only have max of 4 answers"
   email_format_message: "format invalid"
+  description: 'Question of "%{title}" test'
+  answers: "Answers"
 
   layouts:
     admin:
@@ -54,7 +56,7 @@ en:
         head: "%{action} question in test - %{test}"
       new:
         head: "%{action} question in test - %{test}"
-  
+
   tests:
     test:
       pass_test: "Pass"
@@ -76,6 +78,3 @@ en:
     sessions:
       create:
         welcome: "Welcome, %{username}!"
-
-  
-  
