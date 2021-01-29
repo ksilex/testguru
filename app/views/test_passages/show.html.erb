@@ -1,12 +1,14 @@
 <h1><%=t(".passing")%> <%= @test_passage.test.title %></h1>
 <b><%=t(".question_number")%><%= @test_passage.question_number %> |</b>
-<b><%=t(".total_questions")%>:<%= @test_passage.total_questions %></b>
+<b><%=t(".total_questions")%>: <%= @test_passage.total_questions %></b>
 <h2><%= @test_passage.current_question.body %></h2>
 <%=form_with url: @test_passage, method: :put, local: true do |form| %>
   <%= form.collection_check_boxes :answer_ids,
   @test_passage.current_question.answers, :id, :body, include_hidden: false do |answer| %>
-    <%=answer.check_box%>
-    <%=answer.label%><br>
+    <%=answer.check_box(class: "form-check-input") %>
+    <%=answer.label(class: "form-check-label mb-2") %><br>
   <% end %>
-  <%= form.submit t(".next") %>
+  <%= form.submit t(".next"), class: "btn btn-success mb-2" %>
 <% end %>
+
+
