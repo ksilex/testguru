@@ -64,6 +64,9 @@ en:
         questquant: "Amount of questions"
 
   test_passages:
+    gist: 
+      link: "Question saved, link to view: %{link}"
+      error: "Error occured, try later :)"
     show:
       next: "Next"
       question_number: "Question №"

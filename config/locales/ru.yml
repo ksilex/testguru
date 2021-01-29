@@ -64,6 +64,9 @@ ru:
         questquant: "Кол-во вопросов"
 
   test_passages:
+    gist: 
+      link_html: 'Вопрос сохранен, просмотр по <a href="%{link}">ссылке</a>'
+      error: "Возникла ошибка, повторите позже :)"
     show:
       next: "Далее"
       question_number: "Вопрос №"

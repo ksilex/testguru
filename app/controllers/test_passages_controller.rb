@@ -1,4 +1,5 @@
 class TestPassagesController < ApplicationController
+  include ApplicationHelper
   before_action :set_test_passage, only: %i[show result update gist]
   def show
   end
@@ -18,7 +19,9 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
     message = if result.success?
-      { notice: "created gist #{result[:location][/[^\/]*$/]}" }
+      { notice: t(".link", link_html: gist_link(result)) }
+    else
+      { alert: t(".error") }
     end
     redirect_to @test_passage, message
   end

@@ -8,6 +8,7 @@
     <%=answer.check_box(class: "form-check-input") %>
     <%=answer.label(class: "form-check-label mb-2") %><br>
   <% end %>
+  <%= link_to "gist", gist_test_passage_path(@test_passage), method: :post, class: "btn btn-success mb-2" %>
   <%= form.submit t(".next"), class: "btn btn-success mb-2" %>
 <% end %>
 

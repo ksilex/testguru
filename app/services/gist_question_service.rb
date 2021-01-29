@@ -1,5 +1,4 @@
 class GistQuestionService
-
   def initialize(question, client: nil)
     @question = question
     @client = client || GithubClient.new

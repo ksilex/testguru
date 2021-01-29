@@ -16,11 +16,17 @@ module ApplicationHelper
   end
 
   def flash_class(level)
-    case level
-    when "notice" then "alert alert-info alert-dismissible fade show"
-    when "success" then "alert alert-success alert-dismissible fade show"
-    when "error" then "alert alert-danger alert-dismissible fade show"
-    when "alert" then "alert alert-warning alert-dismissible fade show"
-    end
+    { success: "alert alert-success alert-dismissible fade show",
+      error: "alert alert-danger alert-dismissible fade show",
+      alert: "alert alert-warning alert-dismissible fade show", 
+      notice: "alert alert-info alert-dismissible fade show" }.stringify_keys[level.to_s]
+  end
+
+  def gist_hash(result)
+    result[:location][/[^\/]*$/]
+  end
+
+  def gist_link(result)
+    "https://gist.github.com/ksilex/#{gist_hash(result)}"
   end
 end
