@@ -1,12 +1,6 @@
-<% if resource.errors.full_messages.any? %>
-  <h2><%=I18n.t("errors.template.header",
-              count: resource.errors.count,
-              model: resource.class.model_name.human.downcase)%>:
-  </h2>
-  <ul>
-  <% resource.errors.full_messages.each do |error| %>
-    <li><b><%= error %></b></li>
+<% resource.errors.full_messages.each do |error| %>
+  <%= content_tag :div, class: "alert alert-danger alert-dismissible fade show" do %>
+    <%= error %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   <% end %>
-  <hr>
-  </ul>
 <% end %>
