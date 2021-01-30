@@ -1,0 +1,8 @@
+<table>
+  <tr>
+    <th><%=t(User.human_attribute_name("email"))%></th>
+    <th><%=t(Question.human_attribute_name("body"))%></th>
+    <th><%=t(Gist.human_attribute_name("gist_url"))%></th>
+  </tr>
+  <%= render @gists %>
+</table>

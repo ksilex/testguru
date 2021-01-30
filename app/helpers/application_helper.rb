@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def github_url(user, project)
-    link_to t(".project_code"), "https://github.com/#{user}/#{project}", target: "_blank"
+    link_to t(".project_code"), "https://github.com/#{user}/#{project}", target: :blank
   end
 
   def action_for(instance)
@@ -22,11 +22,11 @@ module ApplicationHelper
       notice: "alert alert-info alert-dismissible fade show" }.stringify_keys[level.to_s]
   end
 
-  def gist_hash(result)
-    result[:location][/[^\/]*$/]
+  def gist_hash(response)
+    response[:html_url][/[^\/]*$/]
   end
 
-  def gist_link(result)
-    "https://gist.github.com/ksilex/#{gist_hash(result)}"
+  def gist_link(hash)
+    "https://gist.github.com/ksilex/#{hash}"
   end
 end
