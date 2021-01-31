@@ -19,16 +19,15 @@ class TestPassagesController < ApplicationController
   def gist
     service = GistQuestionService.new(@test_passage.current_question)
     response = service.call
-    client = service.client
 
-    message = if client.last_response.status == 201
-      { notice: t(".link_text") + ": " + 
-                "<a href='#{response[:html_url]}'>#{gist_hash(response)}</a>".html_safe }
+    message = if service.success?
+      create_gist(@test_passage.user, @test_passage.current_question, gist_hash(response))
+      { notice: "#{t(".link_text")}: 
+      #{view_context.link_to gist_hash(response), response[:html_url]}" }
     else
       { alert: t(".error") }
     end
 
-    create_gist(@test_passage.user, @test_passage.current_question, gist_hash(response))
     redirect_to @test_passage, message
   end
 
