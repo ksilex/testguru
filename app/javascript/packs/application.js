@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 import * as bootstrap from 'bootstrap'
 import "../stylesheets/application"
+import "sort-table"
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
