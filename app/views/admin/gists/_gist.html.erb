@@ -1,0 +1,8 @@
+<tr>
+  <td><%= gist.user.email%></td>
+  <td><%= link_to  truncate(gist.question.body, length: 25), 
+                           admin_question_path(gist.question),
+                           target: :blank %>
+  </td>
+  <td><%= link_to gist.gist_url, gist_link(gist.gist_url), target: :blank %></td>
+</tr>
