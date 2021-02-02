@@ -22,7 +22,7 @@ class TestPassagesController < ApplicationController
 
     message = if service.success?
       create_gist(@test_passage.user, @test_passage.current_question, gist_hash(response))
-      { notice: "#{t(".link_text")}: 
+      { notice: "#{t(".link_text")}:
       #{view_context.link_to gist_hash(response), response[:html_url]}" }
     else
       { alert: t(".error") }
