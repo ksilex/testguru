@@ -8,17 +8,20 @@ document.addEventListener("turbolinks:load", function() {
   }
 
   function checkFields() {
-    if (pass_conf_field.value != "") {
-      if (pass_field.value == pass_conf_field.value) {
-        pass_conf_field.style.border = "1px solid green";
-        pass_field.style.border = "1px solid green";
-        document.querySelector(".input-group-append").style.display = "none"
-      }
-      else {
-        pass_conf_field.style.border = "1px solid red";
-        pass_field.style.border = "1px solid red";
-        document.querySelector(".input-group-append").style.display = "inline"
-      }
+    if (pass_conf_field.value == "") {
+      pass_conf_field.style.border = "none";
+      pass_field.style.border = "none";
+      document.querySelector(".input-group-append").style.display = "none"
+    }
+    else if (pass_field.value == pass_conf_field.value) {
+      pass_conf_field.style.border = "1px solid green"
+      pass_field.style.border = "1px solid green"
+      document.querySelector(".input-group-append").style.display = "none"
+    }
+    else {
+      pass_conf_field.style.border = "1px solid red";
+      pass_field.style.border = "1px solid red";
+      document.querySelector(".input-group-append").style.display = "inline"
     }
   }
 })
