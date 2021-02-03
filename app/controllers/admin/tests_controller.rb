@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :set_test, only: %i[show result start edit update]
+  before_action :set_test, only: %i[show result start edit update update_inline]
 
   def index
     @tests = Test.all
@@ -29,6 +29,14 @@ class Admin::TestsController < Admin::BaseController
       redirect_to admin_tests_path
     else
       render :edit
+    end
+  end
+
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
     end
   end
 
