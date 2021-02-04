@@ -21,6 +21,7 @@ ru:
   email_format_message: "неверный формат"
   description: 'Вопрос теста "%{test}"'
   answers: "Ответы"
+  pass_error: "Пароли не совпадают"
 
   layouts:
     admin:
@@ -64,7 +65,7 @@ ru:
         questquant: "Кол-во вопросов"
 
   test_passages:
-    gist: 
+    gist:
       link_text: "Вопрос сохранен, просмотр по ссылке"
       error: "Возникла ошибка, повторите позже :)"
     show:

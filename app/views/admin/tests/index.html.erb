@@ -1,12 +1,22 @@
 <%= link_to t(".new_test"), new_admin_test_path %>
-<table>
-  <tr>
-    <th><%=t(Test.human_attribute_name("category_id"))%></th>
-    <th><%=t(Test.human_attribute_name("title"))%></th>
-    <th><%=t(Test.human_attribute_name("level"))%></th>
-    <th><%=t(Test.human_attribute_name("user_id"))%></th>
-    <th><%=t(".questquant")%></th>
-    <th colspan="3"><%=t("actions")%></th>
-  </tr>
-  <%= render @tests %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <%=t(Test.human_attribute_name("category_id"))%>
+      </th>
+      <th class="sortable-th pointer">
+        <%=t(Test.human_attribute_name("title"))%>
+        <%=octicon "arrow-up", class: "text-success hide"%>
+        <%=octicon "arrow-down", class: "text-success hide"%>
+      </th>
+      <th><%=t(Test.human_attribute_name("level"))%></th>
+      <th><%=t(Test.human_attribute_name("user_id"))%></th>
+      <th><%=t(".questquant")%></th>
+      <th colspan="3"><%=t("actions")%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @tests %>
+  </tbody>
 </table>

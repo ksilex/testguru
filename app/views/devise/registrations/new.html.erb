@@ -9,7 +9,12 @@
         <%= f.text_field :username, class: "form-control mb-2", placeholder: true %>
         <%= f.text_field :first_name, class: "form-control mb-2", placeholder: true %>
         <%= f.text_field :last_name, class: "form-control mb-2", placeholder: true %>
-        <%= f.password_field :password, class: "form-control mb-2", placeholder: true %>
+        <div class="input-group">
+          <%= f.password_field :password, class: "form-control mb-2", placeholder: true %>
+          <div class="input-group-append" style="display:none">
+            <span class="input-group-text" style="color:#f44336"><%=t("pass_error")%></span>
+          </div>
+        </div>
         <%= f.password_field :password_confirmation, class: "form-control mb-2", placeholder: true %>
         <%= f.submit t(".head"), class: "btn btn-success" %>
       <% end %>

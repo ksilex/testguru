@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 import * as bootstrap from 'bootstrap'
 import "../stylesheets/application"
+import "scripts/sort-table"
+import "scripts/password_informer"
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
