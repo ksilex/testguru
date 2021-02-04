@@ -22,6 +22,7 @@ ru:
   description: 'Вопрос теста "%{test}"'
   answers: "Ответы"
   pass_error: "Пароли не совпадают"
+  cancel: "Отмена"
 
   layouts:
     admin:

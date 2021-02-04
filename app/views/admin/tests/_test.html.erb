@@ -1,13 +1,17 @@
-<tr>
+<tr class="align-middle">
   <td><%=test.category.title%></td>
   <td>
-    <%=test.title%>
-    <%=render "form_inline", test: test%>
+    <%=content_tag :span, test.title, class: "test-title", data: {test_id: test.id}%>
+    <%=render "form_inline", test: test == @test ? @test : test%>
   </td>
   <td><%=test.level%></td>
   <td><%=test.author.username%></td>
   <td><%=test.questions.count%></td>
   <td><%=link_to t("show"), [:admin, test]%></td>
   <td><%=link_to t(".add"), new_admin_test_question_path(test)%></td>
-  <td><%=link_to t("edit"), edit_admin_test_path(test)%></td>
+  <td>
+    <%=link_to t("edit"), edit_admin_test_path(test),
+                          class: "form-inline-link",
+                          data: {test_id: test.id}%>
+  </td>
 </tr>

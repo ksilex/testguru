@@ -1,4 +1,9 @@
 <h1><%=t(".passing")%> <%= @test_passage.test.title %></h1>
+<div class="progress mb-2">
+  <%=content_tag :div, "0%", class: "progress-bar", style: "width: 1.5%",
+                 data: {quest_num: @test_passage.question_number,
+                        quest_total: @test_passage.total_questions} %>
+</div>
 <b><%=t(".question_number")%><%= @test_passage.question_number %> |</b>
 <b><%=t(".total_questions")%>: <%= @test_passage.total_questions %></b>
 <h2><%= @test_passage.current_question.body %></h2>
@@ -9,7 +14,7 @@
     <%=answer.label(class: "form-check-label mb-2") %><br>
   <% end %>
   <%= form.submit t(".next"), class: "btn btn-success mb-2" %><br>
-  <%= link_to t("helpers.submit.create", model: Gist), 
-                gist_test_passage_path(@test_passage), 
+  <%= link_to t("helpers.submit.create", model: Gist),
+                gist_test_passage_path(@test_passage),
                 method: :post, class: "btn btn-success" %>
 <% end %>
