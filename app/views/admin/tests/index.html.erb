@@ -1,4 +1,5 @@
 <%= link_to t(".new_test"), new_admin_test_path %>
+<%= render "shared/errors", resource: @test %>
 <table class="table">
   <thead>
     <tr>

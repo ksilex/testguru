@@ -20,7 +20,7 @@ class TestPassage < ApplicationRecord
   end
 
   def total_questions
-    test.questions.size
+    @total_questions ||= test.questions.size
   end
 
   def percentage

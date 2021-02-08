@@ -22,6 +22,7 @@ en:
   description: 'Question of "%{test}" test'
   answers: "Answers"
   pass_error: "Passwords don't match"
+  cancel: "Cancel"
 
   layouts:
     admin:
