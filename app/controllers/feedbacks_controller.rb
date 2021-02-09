@@ -8,7 +8,7 @@ class FeedbacksController < ApplicationController
     @feedback = current_user.feedbacks.new(feedback_params)
     if @feedback.save
       FeedbacksMailer.feedback(@feedback).deliver_now
-      redirect_to root_path, notice: t(".feedback_created")
+      redirect_to root_path, notice: t(".created")
     else
       render :new
     end

@@ -14,3 +14,34 @@
 .hide{
   display: none;
 }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 180px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.footer-link {
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  &:hover, &:focus {
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+hr {
+  border-top: 3px solid #ccc;
+  margin: 2px 0;
+}

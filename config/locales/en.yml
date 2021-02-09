@@ -24,6 +24,14 @@ en:
   pass_error: "Passwords don't match"
   cancel: "Cancel"
 
+  feedbacks:
+    create:
+      created: "Thank you for your feedback"
+
+  feedbacks_mailer:
+    feedback:
+      from: "from"
+
   layouts:
     admin:
       head: "Admin page"
