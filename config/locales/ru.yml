@@ -25,6 +25,8 @@ ru:
   cancel: "Отмена"
 
   feedbacks:
+    form:
+      head: "Оставить отзыв"
     create:
       created: "Спасибо за ваш отзыв"
 

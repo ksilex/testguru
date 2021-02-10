@@ -25,6 +25,8 @@ en:
   cancel: "Cancel"
 
   feedbacks:
+    form:
+      head: "Feedback form"
     create:
       created: "Thank you for your feedback"
 
