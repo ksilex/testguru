@@ -14,4 +14,9 @@
                           class: "form-inline-link",
                           data: {test_id: test.id}%>
   </td>
+  <td>
+    <%=link_to t("delete"), [:admin, test],
+                            method: :delete,
+                            data: { confirm: t("confirm") } %>
+  </td>
 </tr>
