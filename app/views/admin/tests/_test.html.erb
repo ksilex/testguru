@@ -7,6 +7,8 @@
   <td><%=test.level%></td>
   <td><%=test.author.username%></td>
   <td><%=test.questions.count%></td>
+  <td><%=l(test.timer, format: :custom, default: '-')%></td>
+
   <td><%=link_to t("show"), [:admin, test]%></td>
   <td><%=link_to t(".add"), new_admin_test_question_path(test)%></td>
   <td>

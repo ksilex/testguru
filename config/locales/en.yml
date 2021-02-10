@@ -24,6 +24,11 @@ en:
   pass_error: "Passwords don't match"
   cancel: "Cancel"
 
+  time:
+    formats:
+      custom: "%H:%M:%S"
+
+
   feedbacks:
     form:
       head: "Feedback form"
