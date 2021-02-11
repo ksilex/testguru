@@ -3,7 +3,6 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: "Question", foreign_key: "question_id", optional: true
   before_validation :before_validation_set_first_question, on: :create
-  before_validation :before_validation_set_timer, on: :create
   before_validation :before_validation_set_next_question, on: :update
 
   SUCCESS_PERCENT = 85
@@ -32,11 +31,15 @@ class TestPassage < ApplicationRecord
     percentage > SUCCESS_PERCENT
   end
 
-  private
-
-  def before_validation_set_timer
-    test.timer +
+  def times_up?
+    created_at.to_i + test.timer_convert_to_seconds < Time.now.to_i
   end
+
+  def left_time_in_seconds
+    created_at.to_i + test.timer_convert_to_seconds - Time.now.to_i
+  end
+
+  private
 
   def answers_correct?(answer_ids)
     current_question.answers.correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort

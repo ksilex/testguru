@@ -82,6 +82,7 @@ ru:
     show:
       next: "Далее"
       question_number: "Вопрос №"
+      left: "Осталось"
       total_questions: "Всего"
       passing: "Прохождение теста"
     result:

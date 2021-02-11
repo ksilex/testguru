@@ -17,4 +17,9 @@ class Test < ApplicationRecord
   def self.titles_by_category(category)
     by_category(category).order(title: :desc).pluck(:title)
   end
+
+  def timer_convert_to_seconds
+    (timer.strftime("%H").to_i * 3600 + timer.strftime("%M").to_i * 60 +
+    timer.strftime("%S").to_i).seconds
+  end
 end

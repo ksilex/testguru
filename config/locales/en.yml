@@ -88,6 +88,7 @@ en:
     show:
       next: "Next"
       question_number: "Question №"
+      left: "Time left"
       total_questions: "Total"
       passing: "Passing test"
     result:

@@ -5,14 +5,8 @@
     <td><%=test.level%></td>
     <td><%=test.author.username%></td>
     <td><%=test.questions.count%></td>
-    <td class="timer" data-test-id="<%=test.id%>">
-      <%=l(test.timer, format: :custom, default: '-')%>
-    </td>
-    <td>
-      <%=link_to t(".pass_test"), start_test_path(test),
-                                  class: "start-link",
-                                  data: {test_id: test.id}%>
-    </td>
+    <td><%=l(test.timer, format: :custom, default: '-')%></td>
+    <td><%=link_to t(".pass_test"), start_test_path(test)%></td>
     <td><%=link_to t("show"), test%> </td>
   </tr>
 <%end%>
