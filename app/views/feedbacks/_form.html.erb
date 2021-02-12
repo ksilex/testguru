@@ -1,0 +1,15 @@
+<%= render "shared/errors", resource: @feedback %>
+<div class="card">
+  <div class="card-header">
+    <h2><%=t(".head")%></h2>
+  </div>
+  <div class="card-body">
+      <%= form_with model: @feedback, local: true do |form| %>
+        <%= form.text_field :subject, class: "form-control mb-2", placeholder: true %>
+        <%= form.text_area :body, class: "form-control mb-2", placeholder: true %>
+        <%= form.submit class: "btn btn-success" %>
+      <% end %>
+  </div>
+</div>
+
+<%= link_to t("back"), root_path %>

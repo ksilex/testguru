@@ -1,10 +1,11 @@
-<hr>
-<footer>
+<footer class="mx-auto ps-3 pt-2 bg-light">
+  <% if current_user %>
+    <%= link_to t("activerecord.models.feedback"), new_feedback_path, class:"footer-link" %>
+  <% end %>
   <%= github_url("ksilex", "testguru") %>
-  <hr>
   <%= link_to t(".tn"),
               "https://thinknetica.com",
-              target: :blank  %>
-  <hr>
+              target: :blank, class:"footer-link"  %>
+              <hr>
   <%= current_year %> <%=t("year")%>
 </footer>

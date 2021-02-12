@@ -24,6 +24,16 @@ ru:
   pass_error: "Пароли не совпадают"
   cancel: "Отмена"
 
+  feedbacks:
+    form:
+      head: "Оставить отзыв"
+    create:
+      created: "Спасибо за ваш отзыв"
+
+  feedbacks_mailer:
+    feedback:
+      from: "от"
+
   layouts:
     admin:
       head: "Админ панель"
@@ -86,6 +96,7 @@ ru:
 
   activerecord:
     models:
+      feedback: "Обрат. Связь"
       test: "Тест"
       category: "Категория"
       user: "Пользователь"
@@ -93,6 +104,9 @@ ru:
       answer: "Ответ"
       question: "Вопрос"
     attributes:
+      feedback:
+        subject: "Тема"
+        body: "Содержание"
       gist:
         gist_url: "Gist ссылка"
       test:
