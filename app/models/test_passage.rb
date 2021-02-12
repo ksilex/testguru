@@ -1,4 +1,5 @@
 class TestPassage < ApplicationRecord
+  include Awards
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: "Question", foreign_key: "question_id", optional: true
@@ -37,6 +38,11 @@ class TestPassage < ApplicationRecord
 
   def left_time_in_seconds
     created_at.to_i + test.timer_convert_to_seconds - Time.now.to_i
+  end
+
+  def check_for_award
+    first_try_badge
+    category_programming_complete_badge
   end
 
   private
