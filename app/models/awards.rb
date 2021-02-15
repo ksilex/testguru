@@ -6,24 +6,29 @@ module Awards
   end
 
   def category_programming_complete_badge
-    if Test.by_category("Programming").size == select_succeeded_passes
-                                               .select {|t| t.test.category.title == "Programming"}
-                                               .size
+    if first_time?(:category_programming_complete) &&
+       Test.by_category("Programming").ids.sort == user.test_passages
+                                                       .where(test: Test.by_category("Programming"))
+                                                       .select(&:success?)
+                                                       .pluck(:test_id).sort.uniq
       user.badges.create(awarded_for: :category_programming_complete)
     end
   end
 
-  # def hard_tests_complete_badge
-  #   if Test.hard_lvls.size == select_succeeded_passes.select {|t| t.test.level == 5..Float::INFINITY}
-  #     user.badges.create(awarded_for: :hard_tests_complete)
-  #   end
-  User.last.test_passages.distinct(:test_id).where(test: Test.hard_lvls).select(&:success?)
-  # end
+  def hard_tests_complete_badge
+    if first_time?(:hard_tests_complete) &&
+       Test.hard_lvls.ids.sort == user.test_passages.where(test: Test.hard_lvls)
+                                                    .select(&:success?)
+                                                    .pluck(:test_id).sort.uniq
+
+      user.badges.create(awarded_for: :hard_tests_complete)
+    end
+  end
 
   private
 
-  def select_succeeded_passes
-    user.test_passages.uniq(&:test_id).select(&:success?)
+  def first_time?(award)
+    Badge.where(awarded_for: award, user: user).empty?
   end
   #user.test_passages.select("distinct test_id").where(test: Test.hard_lvls).select(&:success?)
 end

@@ -25,4 +25,13 @@ class User < ApplicationRecord
   def admin?
     type == "Admin"
   end
+
+  def badges_hash
+    hash = {}
+    badges.each do |badge|
+      hash[badge.title] ||= {count: 0, image: badge.image}
+      hash[badge.title][:count] += 1
+    end
+    hash
+  end
 end

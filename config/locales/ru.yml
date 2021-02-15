@@ -23,6 +23,7 @@ ru:
   answers: "Ответы"
   pass_error: "Пароли не совпадают"
   cancel: "Отмена"
+  profile: "Профиль"
 
   feedbacks:
     form:

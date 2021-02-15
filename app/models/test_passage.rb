@@ -43,6 +43,7 @@ class TestPassage < ApplicationRecord
   def check_for_award
     first_try_badge
     category_programming_complete_badge
+    hard_tests_complete_badge
   end
 
   private

@@ -1,7 +1,6 @@
 class TestPassagesController < ApplicationController
   include ApplicationHelper
   before_action :set_test_passage, only: %i[show result update gist]
-  before_action :redirect_to_result, only: :update
   def show
   end
 
@@ -12,7 +11,7 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
       @test_passage.check_for_award if @test_passage.success?
-      redirect_to result_test_passage_path(@test_passage)
+      redirect_to result_test_passage_path(@test_passage) if @test_passage.test.timer? && @test_passage.times_up?
     else
     render :show
     end
@@ -34,10 +33,6 @@ class TestPassagesController < ApplicationController
   end
 
   private
-
-  def redirect_to_result
-    redirect_to result_test_passage_path(@test_passage) if @test_passage.test.timer? && @test_passage.times_up?
-  end
 
   def create_gist(user, question, url)
     Gist.create(user: user, question: question, gist_url: url)
