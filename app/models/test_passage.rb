@@ -31,6 +31,14 @@ class TestPassage < ApplicationRecord
     percentage > SUCCESS_PERCENT
   end
 
+  def times_up?
+    created_at.to_i + test.timer_convert_to_seconds < Time.now.to_i
+  end
+
+  def left_time_in_seconds
+    created_at.to_i + test.timer_convert_to_seconds - Time.now.to_i
+  end
+
   private
 
   def answers_correct?(answer_ids)

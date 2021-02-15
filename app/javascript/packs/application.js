@@ -13,6 +13,7 @@ import "scripts/sort-table"
 import "scripts/password_informer"
 import "scripts/sort_inline.js.erb"
 import "scripts/progress_bar"
+import "scripts/redirect-timer"
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))

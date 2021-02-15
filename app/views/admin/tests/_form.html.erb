@@ -6,5 +6,6 @@
   <%= form.collection_select :category_id, Category.all, :id, :title %><br>
   <%= form.label :level %><br>
   <%= form.text_field :level %><br>
+  <%= form.time_field :timer, step: "1"%><br>
   <%= form.submit %>
 <%end%>

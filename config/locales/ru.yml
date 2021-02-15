@@ -82,6 +82,7 @@ ru:
     show:
       next: "Далее"
       question_number: "Вопрос №"
+      left: "Осталось"
       total_questions: "Всего"
       passing: "Прохождение теста"
     result:
@@ -110,6 +111,7 @@ ru:
       gist:
         gist_url: "Gist ссылка"
       test:
+        timer: "Таймер"
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
@@ -403,4 +405,5 @@ ru:
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
+      custom: "%H:%M:%S"
     pm: вечера

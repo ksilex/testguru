@@ -1,4 +1,14 @@
-<h1><%=t(".passing")%> <%= @test_passage.test.title %></h1>
+<h1><%=t(".passing")%> <%= @test_passage.test.title %>
+  <% if @test_passage.test.timer %>
+    <span class="float-end">
+      <%=t(".left")%>:
+      <span class="text-info timerDiv">
+        <%=l(Time.at(@test_passage.left_time_in_seconds).utc, format: :custom, default: '-')%>
+      </span>
+    </span>
+  <%end%>
+</h1>
+
 <div class="progress mb-2">
   <%=content_tag :div, "0%", class: "progress-bar", style: "width: 1.5%",
                  data: {quest_num: @test_passage.question_number,
