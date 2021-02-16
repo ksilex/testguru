@@ -13,9 +13,7 @@ class Badge < ApplicationRecord
   private
 
   def before_validation_check_type
-    create_first_try_badge if first_try?
-    create_category_programming_complete_badge if category_programming_complete?
-    create_hard_tests_complete_badge if hard_tests_complete?
+    send "create_#{awarded_for}_badge"
   end
 
   def create_first_try_badge
