@@ -10,7 +10,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed? || (@test_passage.test.timer? && @test_passage.times_up?)
-      AwardUsersService.new(@test_passage) if @test_passage.success?
+      check_user_for_awards
       redirect_to result_test_passage_path(@test_passage)
     else
     render :show
@@ -33,6 +33,13 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def check_user_for_awards
+    if @test_passage.success?
+      service = AwardUsersService.new(@test_passage)
+      service.call
+    end
+  end
 
   def create_gist(user, question, url)
     Gist.create(user: user, question: question, gist_url: url)
