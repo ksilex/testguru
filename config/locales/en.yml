@@ -23,6 +23,7 @@ en:
   answers: "Answers"
   pass_error: "Passwords don't match"
   cancel: "Cancel"
+  profile: "Profile"
 
   time:
     formats:

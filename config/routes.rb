@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root "tests#index"
   resources :feedbacks, only: %i[new create]
-  devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_scope :user do
+    get "profile", to: "users/sessions#profile"
+  end
   resources :tests, only: %i[index show start] do
     member do
       get :start

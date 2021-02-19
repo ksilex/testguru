@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: "Question", foreign_key: "question_id", optional: true
   before_validation :before_validation_set_first_question, on: :create
   before_validation :before_validation_set_next_question, on: :update
+  before_validation :before_validation_set_success_flag, on: :update
 
   SUCCESS_PERCENT = 85
 
@@ -51,5 +52,9 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_next_question
     self.current_question = test.questions.where("id > ?", current_question).first
+  end
+
+  def before_validation_set_success_flag
+    self.success = success?
   end
 end

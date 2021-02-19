@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :badges
   has_many :feedbacks
   has_many :gists
   has_many :test_passages
@@ -23,5 +24,14 @@ class User < ApplicationRecord
 
   def admin?
     type == "Admin"
+  end
+
+  def badges_hash
+    hash = {}
+    badges.each do |badge|
+      hash[badge.title] ||= {count: 0, image: badge.image}
+      hash[badge.title][:count] += 1
+    end
+    hash
   end
 end
